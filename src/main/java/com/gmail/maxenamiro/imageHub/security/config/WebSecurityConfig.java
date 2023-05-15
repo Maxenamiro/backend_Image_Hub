@@ -1,13 +1,11 @@
 package com.gmail.maxenamiro.imageHub.security.config;
 
-import com.gmail.maxenamiro.imageHub.appuser.AppUser;
 import com.gmail.maxenamiro.imageHub.appuser.AppUserService;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
-import org.springframework.security.config.annotation.authentication.configurers.userdetails.DaoAuthenticationConfigurer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -29,7 +27,7 @@ public class WebSecurityConfig {
                 .requestMatchers("/api/v*/registration/**")
                 .permitAll()
                 .anyRequest().authenticated();
-//                .and().formLogin();
+                //.and().formLogin();
         return http.build();
     }
 
